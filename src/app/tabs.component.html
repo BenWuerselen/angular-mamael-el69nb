@@ -1,0 +1,22 @@
+<mat-tab-group mat-align-tabs="start" [disablePagination]="true" animationDuration="0ms"
+	[selectedIndex]="selected.value" (selectedIndexChange)="selected.setValue($event)">
+	<mat-tab *ngFor="let tab of (tabs | visibleTabs)" [label]="tab.label">
+		<ng-container *ngTemplateOutlet="tab.template"></ng-container>
+	</mat-tab>
+	<mat-tab *ngIf="isMenuVisible === true" disabled>
+		<ng-template mat-tab-label>
+			<button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>more_horiz</mat-icon>
+      </button>
+			<mat-menu #menu>
+				<button
+          mat-menu-item
+          *ngFor="let tab of (tabs | visibleTabs:false)"
+          (click)="updateTabs(tab)"
+        >
+          {{ tab.label }}
+        </button>
+			</mat-menu>
+		</ng-template>
+	</mat-tab>
+</mat-tab-group>
