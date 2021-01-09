@@ -12,7 +12,8 @@ import { TabComponent } from "./tab.component";
 
 @Component({
   selector: "mos-tabs",
-  templateUrl: "./tabs.component.html"
+  templateUrl: "./tabs.component.html",
+  styleUrls: ["./tabs.component.css"]
 })
 export class TabsComponent implements AfterViewInit {
   selected = new FormControl(0);

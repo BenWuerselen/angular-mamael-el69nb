@@ -5,11 +5,9 @@
 	</mat-tab>
 	<mat-tab *ngIf="isMenuVisible === true" disabled>
 		<ng-template mat-tab-label>
-			<div class='mytabstyle'>
-				<button mat-icon-button [matMenuTriggerFor]="menu">
+			<button mat-icon-button [matMenuTriggerFor]="menu">
         <mat-icon>more_horiz</mat-icon>
       </button>
-			</div>
 			<mat-menu #menu>
 				<button
           mat-menu-item

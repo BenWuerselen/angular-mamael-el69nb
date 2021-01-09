@@ -1,0 +1,6 @@
+.mytabstyle {
+  width: 25px !important;
+  border-width: 9px;
+  border-style: solid;
+  border-color: red;
+}
